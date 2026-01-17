@@ -17,6 +17,11 @@ I chose the second method because because it is more readable and straight forwa
 that #count represents the number of cancelled orders, while on the first one is a bit 
 confusing to understand for readers.
 
+Edge Case Considerations:
+
+* All orders cancelled: If all orders are cancelled, the count will be 0. Ensure that division by zero is properly handled.
+* Non-integer order amounts: Ensure that all order amounts are of a numeric type (e.g., integers or floats), and handle any invalid types if necessary.
+
 # Task 2
 
 Finding:
@@ -35,6 +40,12 @@ The updated approach ensures that the email :
 
 This validation will improve the security problem of the original code.
 
+Edge Case Considerations:
+
+* Email addresses with international characters: Consider using Unicode-aware validation to handle characters outside the standard ASCII set (e.g., usér@example.com).
+* Very long domain names or TLDs: Ensure the regex can handle domain names of varying lengths, including multi-character TLDs (e.g., .co.uk).
+* Multiple consecutive dots: Check for email addresses with invalid sequences like user..name@example.com.
+
 # Task 3
 
 Finding:
@@ -52,3 +63,8 @@ To solve this issue we have two possible fixes like before:
 I chose the second solution for the same reason as in Task 1: clarity.
 In the updated code, #count only represents valid values which makes it possible to calculate
 the average of valid measurements only as intended.
+
+Edge Case Considerations:
+
+* All None values: Ensure that if all values are None, the code returns a meaningful result (e.g., 0 or None), and handles division by zero.
+* Mixed data types: If values can contain non-numeric data, ensure the code gracefully handles invalid values or raises a clear exception.
