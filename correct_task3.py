@@ -7,7 +7,7 @@ def average_valid_measurements(values):
             total += float(v)
             count += 1
         else:
-            print("Adjust your list")
+            print("Adjust your list and try again")
             
     if count == 0:
         return 0
