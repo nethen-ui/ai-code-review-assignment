@@ -6,7 +6,8 @@ def average_valid_measurements(values):
         if v is not None and isinstance(v, (int, float)):
             total += float(v)
             count += 1
-
+        else:
+            print("Adjust your list")
             
     if count == 0:
         return 0
